@@ -90,6 +90,19 @@ html body{
     border-radius: 5rem;
 }
 
+.flex-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.todo-text{
+    color: white;
+    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+}
+
 /* my to do list end */
 
 
