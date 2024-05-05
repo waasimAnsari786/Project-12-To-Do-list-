@@ -64,7 +64,7 @@ html body{
 
 .heading{
     color: white;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: "Poppins", sans-serif;
     text-transform: capitalize;
     font-weight: bold;
@@ -72,9 +72,22 @@ html body{
 
 #my-input{
     background-color: white;
-    padding: 1rem;
     border: none;
     border-radius: .5rem;
+    font-size: 1.5rem;
+    outline: none;
+    padding: .5rem;
+    width: 70%;
+}
+
+.to-do-btn{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+    border: none;
+    background-color: #F6ED63;
+    padding: 1rem;
+    text-transform: capitalize;
+    border-radius: 5rem;
 }
 
 /* my to do list end */
