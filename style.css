@@ -1,0 +1,85 @@
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+
+/* my font size's media query start */
+html {
+    font-size: 62.5%;
+}
+
+@media (min-width:1200px) {
+    html {
+        font-size: 68.75%;
+    }
+}
+
+@media (min-width:1000px) {
+    html {
+        font-size: 68.75%;
+    }
+}
+
+@media (max-width:992px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media (max-width:576px) {
+    html {
+        font-size: 50%;
+    }
+
+}
+
+@media (max-width:400px) {
+    .main-div {
+        width: 40rem !important;
+    }
+}
+
+/* my font size's media query end */
+
+
+
+
+/* my to do list start */
+
+html body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    color: white;
+    font-size: 3rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#my-input{
+    background-color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+}
+
+/* my to do list end */
+
+
+.rough {
+    border: .1rem solid rgb(255, 255, 255);
+}
