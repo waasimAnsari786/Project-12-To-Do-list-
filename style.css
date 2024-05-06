@@ -88,6 +88,14 @@ html body{
     padding: 1rem;
     text-transform: capitalize;
     border-radius: 5rem;
+    transition: 0.5s;
+    border: .1rem solid #F6ED63;
+}
+
+.to-do-btn:hover{
+    background-color: transparent;
+    color: #F6ED63;
+    border: .1rem solid #F6ED63;
 }
 
 .flex-box{
