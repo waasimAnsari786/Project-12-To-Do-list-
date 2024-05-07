@@ -3,7 +3,7 @@ let addToDoBtn = document.querySelector("#add-to-do-btn");
 let toDoListDiv = document.querySelector(".to-do-list");
 
 const getToDo = () => {
-    return JSON.parse(localStorage.getItem("Todo"));
+   return JSON.parse(localStorage.getItem("ToDo"));     
 };
 
 let arrOfToDoList = getToDo() || [];
@@ -27,10 +27,17 @@ const createElements = (text) => {
     
         let deleteBtn = toDoListDiv.lastElementChild.children[1];
         deleteBtn.addEventListener("click", () => {
+            let liText = deleteBtn.previousElementSibling.textContent.toLowerCase();
+            let newArrOfToDoList = arrOfToDoList.filter((currElem) => {
+                return currElem !== liText;
+            });
+
+            localStorage.setItem("ToDo" , JSON.stringify(newArrOfToDoList));
+            
+            myInput.value = ``;
+            
             let parentOfDeleteBtn = deleteBtn.parentElement;
             parentOfDeleteBtn.style.display = `none`;
-            localStorage.removeItem("Todo");
-            arrOfToDoList = [];
         })
 };
 
@@ -38,11 +45,11 @@ const addToDo = (val) => {
     if (myInput.value !== `` && !arrOfToDoList.includes(myInput.value)) {
         arrOfToDoList.push(val.trim());
         arrOfToDoList = [... new Set(arrOfToDoList)];
-    
-        localStorage.setItem("Todo", JSON.stringify(arrOfToDoList));
         
+        localStorage.setItem("ToDo", JSON.stringify(arrOfToDoList));
+        console.log(JSON.parse(localStorage.getItem("ToDo")));
         myInput.value = ``;
-
+        
         createElements(val);
     }
 
@@ -53,7 +60,7 @@ const addToDo = (val) => {
 
 const showToDo = () => {
     arrOfToDoList.forEach(element => {
-        createElements(element)
+        createElements(element);
     });
 };
 
@@ -62,4 +69,5 @@ showToDo();
 addToDoBtn.addEventListener("click", () => {
     addToDo(myInput.value);
 });
+
 console.log(arrOfToDoList);
