@@ -29,9 +29,12 @@ const createElements = (text) => {
         deleteBtn.addEventListener("click", () => {
             let liText = deleteBtn.previousElementSibling.textContent.toLowerCase();
             let newArrOfToDoList = arrOfToDoList.filter((currElem) => {
-                return currElem !== liText;
+                return liText !== currElem;
             });
 
+            arrOfToDoList = newArrOfToDoList;
+
+            localStorage.removeItem("ToDo");
             localStorage.setItem("ToDo" , JSON.stringify(newArrOfToDoList));
             
             myInput.value = ``;
@@ -69,5 +72,3 @@ showToDo();
 addToDoBtn.addEventListener("click", () => {
     addToDo(myInput.value);
 });
-
-console.log(arrOfToDoList);
