@@ -50,7 +50,7 @@ const addToDo = (val) => {
         arrOfToDoList = [... new Set(arrOfToDoList)];
         
         localStorage.setItem("ToDo", JSON.stringify(arrOfToDoList));
-        console.log(JSON.parse(localStorage.getItem("ToDo")));
+        JSON.parse(localStorage.getItem("ToDo"));
         myInput.value = ``;
         
         createElements(val);
